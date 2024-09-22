@@ -301,6 +301,9 @@ impl WindowFlags {
         if self.contains(WindowFlags::IGNORE_CURSOR_EVENT) {
             style_ex |= WS_EX_TRANSPARENT | WS_EX_LAYERED;
         }
+        if self.contains(WindowFlags::TRANSPARENT) {
+            style_ex |= WS_EX_LAYERED;
+        }
         if self.contains(WindowFlags::CLIP_CHILDREN) {
             style |= WS_CLIPCHILDREN;
         }
